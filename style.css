@@ -1,0 +1,315 @@
+/* TOUS LES ELEMENTS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif', serif;
+}
+
+/* HAUT DE PAGE */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 15px;
+    background: linear-gradient(to top, black 0px, black 3px, transparent 4px) no-repeat center bottom / 0% 100%;
+    opacity: 0.5;
+    transition: background-size 1.5s, opacity 1.5s;
+}
+
+header:hover{
+    background-size: 75% 100%;
+    opacity: 1;
+}
+
+.gauche{
+    display: flex;
+    align-items: center;
+}
+
+.pdp{
+    width: 50px;
+    height: 50px;
+}
+
+.titre .un{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+    background: linear-gradient(to top, black 0px, black 1.5px, transparent 2px) no-repeat center bottom / 0% 100%;
+    transition: background-size 1.5s;
+}
+
+.titre .un:hover{
+    background-size: 100% 100%;
+}
+
+.pdp, .titre{
+    margin-left: 15px;
+}
+
+.droite a{
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+}
+
+.droite a:hover{
+    font-weight: bold;
+}
+
+/* BURGER */
+
+.droite_bis{
+    display: none;
+    margin-right: 30px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton{
+    position: absolute;
+    display: none;
+    z-index: 10;
+}
+
+.boite{
+    position: absolute;
+    cursor: pointer;
+}
+
+.icone{
+    background-color: black;
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+    z-index: 10;
+}
+
+.icone::before{
+    content: '';
+    background-color: black;
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    border-radius: 5px;
+    top: 6px;
+    transition: all 0.5s ease-in-out;
+}
+
+.icone::after{
+    content: '';
+    background-color: black;
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    border-radius: 5px;
+    top: -6px;
+    transition: all 0.5s ease-in-out;
+}
+
+.header_bis{
+    width: 0%;
+    height: 100%;
+    position: fixed;
+    top: 15px;
+    right: -66%;
+    border: black solid 3px;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: width 1.5s;
+    z-index: 1;
+    padding-top: 80px;
+    padding-left: 15px;
+}
+
+.header_bis a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+}
+
+.header_bis a:hover{
+    font-weight: bold;
+}
+
+.bouton:checked ~ .boite .icone{
+    background-color: transparent;
+}
+
+.bouton:checked ~ .boite .icone::before{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.bouton:checked ~ .boite .icone::after{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.bouton:checked ~ .header_bis{
+    width: 100%;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 750px){
+    .droite{
+        display: none;
+    }
+    .droite_bis{
+        display: flex;
+    }
+}
+
+/* PHOTO */
+
+.menu{
+    width: 50px;
+    height: 50px;
+    background: url(img/photo_profil.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    outline: black solid 1.5px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 30px;
+    position: fixed;
+    transition: transform 1.5s;
+}
+
+.menu:hover{
+    transform: rotate(360deg);
+}
+
+/* PAGE D'ACCUEIL */
+
+.accueil{
+    width: 100%;
+    height: 100vh;
+    background: url(img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.centre{
+    text-align: center;
+    padding-top: 40vh;
+    color: white;
+    font-weight: bold;
+    text-shadow: 10px 10px 10px black;
+}
+
+.centre .un{
+    text-transform: uppercase;
+    font-size: 7vh;
+}
+
+.centre .deux{
+    font-size: 3vh;
+}
+
+.scroll{
+    margin-top: 40vh;
+    margin-left: 30px;
+}
+
+.scroll a{
+    text-decoration: none;
+    color: white;
+    font-size: small;
+    transition: font-size .5s;
+}
+
+.scroll a:hover{
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* PRESENTATION */
+
+#présentation{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    text-align: center;
+}
+
+/* BLOG */
+
+#blog{
+    width: 100%;
+    height: 100vh;
+    background: url(img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* CV */
+
+#cv{
+    width: 100%;
+    height: 50vh;
+}
+
+/* BAS DE PAGE */
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background: url(img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright{
+    color: white;
+    line-height: 10vh;
+    margin-left: 30px;
+    font-size: small;
+}
+
+.contact{
+    display: flex;
+    margin-right: 15px;
+    font-size: large;
+    align-items: center;
+}
+
+.contact p{
+    font-size: small;
+    color: white;
+    margin-right: 15px;
+}
+
+.contact a{
+    color: white;
+    margin-right: 15px;
+    transition: font-size .5s;
+}
+
+.contact a:hover{
+    font-size: x-large;
+}
