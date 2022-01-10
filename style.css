@@ -18,7 +18,7 @@ header{
     left: 0;
     padding: 15px;
     background: linear-gradient(to top, black 0px, black 1.5px, transparent 2px) no-repeat center bottom / 0% 100%;
-    opacity: 0.5;
+    opacity: 0;
     transition: background-size 1.5s, opacity 1.5s;
 }
 
@@ -165,17 +165,6 @@ header:hover{
     width: 100%;
 }
 
-/* RESPONSIVE */
-
-@media screen and (max-width: 750px){
-    .droite{
-        display: none;
-    }
-    .droite_bis{
-        display: flex;
-    }
-}
-
 /* PHOTO */
 
 .menu{
@@ -306,4 +295,29 @@ footer{
 .contact a{
     color: white;
     margin-right: 15px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 750px){
+    header{
+        background: linear-gradient(to top, black 0px, black 1.5px, transparent 2px) no-repeat center bottom / 75% 100%;
+    }
+    
+    .titre .un{
+        background: linear-gradient(to top, black 0px, black 1.5px, transparent 2px) no-repeat center bottom / 1000% 100%;
+    }
+    
+    .droite{
+        display: none;
+    }
+    
+    .droite_bis{
+        display: flex;
+    }
+    
+    .scroll a:hover{
+        font-size: small;
+        font-weight: normal;
+    }
 }
