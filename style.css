@@ -129,7 +129,7 @@ header:hover{
     right: -66%;
     border: black solid 3px;
     border-radius: 10px;
-    background-color: transparent;
+    background-color: white;
     transition: width 1.5s;
     z-index: 1;
     padding-top: 80px;
